@@ -1,10 +1,5 @@
 @tailwind base;
 
-@font-face {
-  font-family: 'Bree Serif', serif;
-  font-weight: 400;
-  src: url(~@/assets/fonts/BreeSerif-Regular.ttf) format('ttf');
-}
 
 @tailwind components;
 
