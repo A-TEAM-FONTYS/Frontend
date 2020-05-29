@@ -1,13 +1,17 @@
 module.exports = {
   purge: [],
   theme: {
+    fontFamily: {
+      body: ['Bree Serif', 'serif'],
+      display: ['Bree Serif', 'serif']
+    },
     extend: {
       colors: {
         anzac: '#E1AA47',
         sunglow: '#FCCE4B',
         'green-mist': '#D6D4AF',
         'outer-space': '#374E4E',
-        'limed-spruce': '#374E4E',
+        'limed-spruce': '#273A3A',
         pampas: '#F3F1EB'
       },
       fontSize: {

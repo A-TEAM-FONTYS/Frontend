@@ -1,7 +1,11 @@
 <template>
-  <div id="app" class="bg-gray-200 w-full h-screen">
+  <div id="app" class="bg-gray-200">
     <router-view />
   </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="postcss">
+body {
+  @apply font-body;
+}
+</style>
