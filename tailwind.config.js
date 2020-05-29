@@ -2,8 +2,7 @@ module.exports = {
   purge: [],
   theme: {
     fontFamily: {
-      body: ['Bree Serif', 'serif'],
-      display: ['Bree Serif', 'serif']
+      serif: ['"Bree Serif"']
     },
     extend: {
       colors: {
