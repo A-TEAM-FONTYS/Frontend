@@ -1,27 +1,27 @@
-import someService from "@/services/api.js"
+//import someService from "@/services/UsageService"
 
 const state = {
   app: {},
   apps: []
 }
 
-const getters = {
+const getters = { /*
   getAppById: state => id => {
     return state.apps.find(app => app.id == id)
   },
   getAppTotalUsage: (state, getters) => id => {
     return state.apps
-  }
+  }*/
 
 }
 
-const mutations = {
+const mutations = {/*
   SET_APPS(state, apps) {
     state.apps = apps
-  }
+  }*/
 }
 
-const actions = {
+const actions = {/*
   fetchApps({ commit }) {
     someService.getApps()
       .then(response => {
@@ -30,7 +30,7 @@ const actions = {
       .catch(error => {
         console.log("ERROR: " + error)
       })
-  }
+  }*/
 
 }
 
