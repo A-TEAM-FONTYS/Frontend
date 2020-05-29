@@ -12,7 +12,7 @@
         class="py-1 px-4 w-20 rounded-r-lg"
         :class="{active: activeBtn === 'weekly' }"
         @click.prevent="setPicker"
-      >weekly</button>
+      >Weekly</button>
     </div>
   </div>
 </template>
