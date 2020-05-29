@@ -1,4 +1,4 @@
-# fitphone-client
+# Fitphone PWA
 
 ## Project setup
 ```
