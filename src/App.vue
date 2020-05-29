@@ -1,6 +1,9 @@
 <template>
-  <div id="app" class="bg-gray-200 w-full h-screen bg-limed-spruce">
-    <NavBar />
+  <div id="app" class="w-full h-screen bg-limed-spruce">
+    <router-view />
+    <NavBar
+      v-if="this.$route.path != '/login' && this.$route.path != '/register'"
+    />
   </div>
 </template>
 
@@ -14,4 +17,4 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="postcss"></style>
