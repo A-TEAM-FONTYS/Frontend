@@ -1,11 +1,17 @@
 <template>
-  <div id="app" class="bg-gray-200">
-    <router-view />
+  <div id="app" class="bg-gray-200 w-full h-screen bg-limed-spruce">
+    <NavBar />
   </div>
 </template>
 
-<style lang="postcss">
-body {
-  @apply font-body;
+<script>
+import NavBar from '@/components/base/NavBarComponent'
+
+export default {
+  components: {
+    NavBar
+  }
 }
-</style>
+</script>
+
+<style lang="scss"></style>
