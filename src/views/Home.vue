@@ -1,10 +1,21 @@
 <template>
   <div class="bg-outer-space h-screen w-screen p-6 text-white">
-    <div>
-      <h1 class="font-sans text-3xl">Welcome back,</h1>
-      <h2 class="font-sans text-lg">NickyBouwmans12</h2>
+    <div class="grid grid-rows-3 grid-flow-col gap-10">
+      <div class="row-span-2">
+        <div class="h-full flex items-center">
+          <div>
+            <span class="block w-full font-bold text-2xl">Welcome back,</span>
+            <span class="font-medium text-xl">NickyBouwmans12</span>
+          </div>
+        </div>
+      </div>
+      <div class="row-span-2">
+        <div class="flex justify-end">
+          <img src="@/assets/treeArt.png" class="sm:w-24 sm:h-24" />
+        </div>
+      </div>
     </div>
-    <div class="w-full h-40 mt-6 overflow-hidden">
+    <div class="w-full h-40 -mt-16 overflow-hidden">
       <div class="flex justify-center">
         <img
           class="object-none object-center w-16 h-16 rounded-full bg-white border-8 border-outer-space"
