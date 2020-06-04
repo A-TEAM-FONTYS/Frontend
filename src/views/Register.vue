@@ -17,114 +17,32 @@
         />
       </svg>
     </div>
-    <div class="w-full sm:w-1/3 sm:mx-auto z-10">
-      <div class="flex flex-col">
-        <span class="uppercase text-sm text-gray-400 font-light">username</span>
-        <div
-          class="flex items-center border-b border-b-2 border-gray pt-2 pb-1 mb-6 w-full"
-        >
-          <input
-            class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 leading-tight focus:outline-none"
-            type="text"
-            placeholder="Username"
-            aria-label="Username"
-            v-model="username"
-          />
-        </div>
-      </div>
+    <div class="w-full sm:w-1/2 lg:w-1/3 sm:mx-auto z-10">
+      <register-form-component />
 
-      <div class="flex flex-col">
-        <span class="uppercase text-sm text-gray-400 font-light">email</span>
-        <div
-          class="flex items-center border-b border-b-2 border-gray pt-2 pb-1 mb-6 w-full"
+      <div class="flex flex-col items-center justify-center pt-4 sm:mx-auto">
+        <span class="text-limed-spruce text-sm font-bold"
+          >Already have an account?</span
         >
-          <input
-            class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 leading-tight focus:outline-none"
-            type="text"
-            placeholder="Email"
-            aria-label="Email"
-            v-model="email"
-          />
-        </div>
-      </div>
-      <div class="flex flex-col">
-        <span class="uppercase text-sm text-gray-400 font-light">password</span>
-        <div
-          class="flex items-center border-b border-b-2 border-gray pt-2 pb-1 mb-6 w-full"
-        >
-          <input
-            class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 leading-tight focus:outline-none"
-            type="password"
-            placeholder="Password"
-            aria-label="Password"
-            v-model="password"
-          />
-          <Icon
-            name="eye"
-            :width="22"
-            class="text-sunglow hover:text-white mr-2"
-          />
-        </div>
-      </div>
-      <div class="flex flex-col">
-        <span class="uppercase text-sm text-gray-400 font-light"
-          >confirm password</span
-        >
-        <div
-          class="flex items-center border-b border-b-2 border-gray pt-2 pb-1 mb-12 w-full"
-        >
-          <input
-            class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 leading-tight focus:outline-none"
-            type="password"
-            placeholder="Confirm password"
-            aria-label="Confirm Password"
-            v-model="confirmPassword"
-          />
-          <Icon
-            name="eye"
-            :width="22"
-            class="text-sunglow hover:text-white mr-2"
-          />
-        </div>
-      </div>
-      <div
-        class="flex items-center justify-between w-full pb-6 border-b border-b-1 border-gray"
-      >
-        <button
-          class="bg-limed-spruce hover:bg-outer-space rounded-lg text-white py-3 px-4 w-full uppercase tracking-wide text-xs font-bold"
-        >
-          Register
-        </button>
-      </div>
-      <div
-        class="flex flex-col items-center justify-center w-full pt-4 sm:w-1/3 sm:mx-auto"
-      >
-        <span>sdasdas</span>
-        <span>sdasdas</span>
+        <router-link to="/login" class="text-anzac text-sm">
+          Login
+        </router-link>
       </div>
     </div>
 
     <div
-      class="fixed inset-x-0 bottom-0 flex justify-center -mb-24 sm:-mb-48 z-0"
+      class="fixed inset-x-0 bottom-0 flex justify-center sm:hidden -mb-24 sm:-mb-48 z-0"
     >
-      <img :src="require('@/assets/img/register_page_img.svg')" />
+      <img :src="require('@/assets/img/register_page_img.svg')" class="z-0" />
     </div>
   </div>
 </template>
 
 <script>
-import Icon from '@/components/base/IconComponent.vue'
+import RegisterFormComponent from '@/components/authentication/RegisterFormComponent.vue'
 
 export default {
-  data() {
-    return {
-      username: null,
-      email: null,
-      password: null,
-      confirmPassword: null
-    }
-  },
-  components: { Icon }
+  components: { RegisterFormComponent }
 }
 </script>
 
