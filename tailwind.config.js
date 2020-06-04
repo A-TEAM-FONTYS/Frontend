@@ -28,6 +28,9 @@ module.exports = {
         '10xl': '8rem',
         '11xl': '9rem'
       },
+      width:{
+        'fit-content': 'fit-content'
+      },
       lineHeight: {
         'extra-loose': '2.5'
       },
