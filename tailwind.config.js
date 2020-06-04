@@ -11,7 +11,9 @@ module.exports = {
         'green-mist': '#D6D4AF',
         'outer-space': '#374E4E',
         'limed-spruce': '#273A3A',
-        pampas: '#F3F1EB'
+        pampas: '#F3F1EB',
+        'form-green': '#07AB5F',
+        'form-red': '#D95E5E'
       },
       fontSize: {
         xs: '.75rem',
