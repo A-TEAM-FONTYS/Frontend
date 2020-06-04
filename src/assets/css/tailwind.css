@@ -5,6 +5,10 @@
   src: url(./fonts/BreeSerif-Regular.ttf) format('ttf');
 }
 
+.hasError {
+  @apply border-red-400;
+}
+
 @tailwind components;
 
 @tailwind utilities;
