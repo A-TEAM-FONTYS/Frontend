@@ -1,15 +1,15 @@
 <template>
   <div class="flex justify-center">
-    <div class="bg-limed-spruce rounded-lg mt-8">
+    <div class="bg-limed-spruce rounded-lg">
       <button
         type="button"
-        class="py-1 px-4 w-20 rounded-l-lg"
+        class="py-1 px-4 w-20 rounded-l-lg text-sm"
         :class="{active: activeBtn === 'daily' }"
         @click.prevent="setPicker"
       >Daily</button>
       <button
         type="button"
-        class="py-1 px-4 w-20 rounded-r-lg"
+        class="py-1 px-4 w-20 rounded-r-lg text-sm"
         :class="{active: activeBtn === 'weekly' }"
         @click.prevent="setPicker"
       >Weekly</button>
