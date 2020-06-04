@@ -1,19 +1,19 @@
 <template>
-  <div class="question-container w-full h-full p-5 bg-outer-space">
+  <div class="w-full h-full p-5 bg-outer-space">
     <div class="text-white text-base m-5">
-      <div class="title">
+      <div class="">
         Preparation Question B
         <a class="float-right text-sunglow">X</a>
       </div>
     </div>
-    <div class="content-holder p-5 mt-3 ml-1">
+    <div class="p-5 mt-3 ml-1">
       <div
         class="w-fit-content text-black rounded-full p-5 left-0 bottom-0 right-0 top-0 mx-auto bg-white shadow-xl"
       >
         <Icon name="instagram" />
       </div>
       <div class="text-lg text-white text-center mt-1">Short term - Advantages</div>
-      <div class="app-content p-5 mt-5 left-0 bottom-0 right-0 top-0 mx-auto">
+      <div class="p-5 mt-5 left-0 bottom-0 right-0 top-0 mx-auto">
         <ul class="text-xl text-white">
           <li class="pb-5">
             <label class="block text-sm block">
@@ -46,8 +46,6 @@
 
 
 <style scoped>
-.custom-suggestion {
-}
 </style>
 
 
