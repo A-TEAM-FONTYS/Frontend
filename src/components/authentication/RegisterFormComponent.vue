@@ -2,21 +2,44 @@
   <div>
     <form @submit.prevent="submit">
       <div class="flex flex-col mb-6">
-        <span class="uppercase text-sm text-gray-400 font-light">username</span>
+        <span class="uppercase text-sm text-gray-400 font-light"
+          >First name</span
+        >
         <div
           class="flex items-center border-b border-b-2 border-gray pt-2 pb-1 w-full"
-          :class="{ hasError: $v.form.username.$error }"
+          :class="{ hasError: $v.form.firstname.$error }"
         >
           <input
             class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 leading-tight focus:outline-none"
             type="text"
-            placeholder="Username"
-            aria-label="Username"
-            v-model="form.username"
+            placeholder="First name"
+            aria-label="First name"
+            v-model="form.firstname"
           />
         </div>
         <div class="text-sm text-red-400" v-if="$v.$error">
-          <div v-if="!$v.form.username.required">Username is required</div>
+          <div v-if="!$v.form.firstname.required">First name is required</div>
+        </div>
+      </div>
+
+      <div class="flex flex-col mb-6">
+        <span class="uppercase text-sm text-gray-400 font-light"
+          >Last name</span
+        >
+        <div
+          class="flex items-center border-b border-b-2 border-gray pt-2 pb-1 w-full"
+          :class="{ hasError: $v.form.lastname.$error }"
+        >
+          <input
+            class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 leading-tight focus:outline-none"
+            type="text"
+            placeholder="Last name"
+            aria-label="Last name"
+            v-model="form.lastname"
+          />
+        </div>
+        <div class="text-sm text-red-400" v-if="$v.$error">
+          <div v-if="!$v.form.lastname.required">Last name is required</div>
         </div>
       </div>
 
@@ -35,9 +58,15 @@
           />
         </div>
         <div class="text-sm text-red-400" v-if="$v.$error">
-          <div v-if="!$v.form.username.required">Email is required</div>
+          <div v-if="!$v.form.email.required">
+            Email is required
+          </div>
+          <div v-if="!$v.form.email.email">
+            Please enter a valid email address
+          </div>
         </div>
       </div>
+
       <div class="flex flex-col mb-6">
         <span class="uppercase text-sm text-gray-400 font-light">password</span>
         <div
@@ -62,6 +91,7 @@
           <div v-if="!$v.form.password.required">Password is required</div>
         </div>
       </div>
+
       <div class="flex flex-col mb-12">
         <span class="uppercase text-sm text-gray-400 font-light"
           >confirm password</span
@@ -87,6 +117,7 @@
           </div>
         </div>
       </div>
+
       <div
         class="flex items-center justify-between w-full pb-4 border-b border-b-1 border-gray"
       >
@@ -109,8 +140,9 @@ export default {
   data() {
     return {
       form: {
-        username: null,
         email: null,
+        firstname: null,
+        lastname: null,
         password: null,
         confirmPassword: null
       },
@@ -121,8 +153,9 @@ export default {
   components: { Icon },
   validations: {
     form: {
-      username: { required },
       email: { required, email },
+      firstname: { required },
+      lastname: { required },
       password: { required },
       confirmPassword: { required, sameAsPassword: sameAs('password') }
     }
