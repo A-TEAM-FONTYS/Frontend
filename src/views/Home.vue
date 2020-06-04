@@ -4,7 +4,7 @@
       <div class="row-span-2">
         <div class="h-full flex items-center">
           <div>
-            <span class="block w-full font-bold text-2xl">Welcome back,</span>
+            <span class="block w-full text-2xl">Welcome back,</span>
             <span class="font-medium text-xl">NickyBouwmans12</span>
           </div>
         </div>
@@ -17,10 +17,11 @@
     </div>
     <div class="w-full h-40 -mt-16 overflow-hidden">
       <div class="flex justify-center">
-        <img
-          class="object-none object-center w-16 h-16 rounded-full bg-white border-8 border-outer-space"
-          src="@/assets/pen-tool.png"
-        />
+        <div
+          class="bg-pampas w-20 h-20 rounded-full object-center object-none border-8 border-outer-space"
+        >
+          <Icon name="pen-tool" :width="32" :height="32" class="text-limed-spruce m-4" />
+        </div>
       </div>
       <div class="-mt-8 w-full h-32 bg-limed-spruce rounded-md text-center">
         <div class="inline-block align-bottom">
@@ -32,11 +33,7 @@
     <div class="flex w-full h-24 mt-6 overflow-hidden">
       <div class="flex-1 h-full pr-3">
         <div class="h-full bg-limed-spruce rounded-md p-3">
-          <h4
-            class="text-green-mist text-xs uppercase tracking-widest font-semibold"
-          >
-            Day Streak
-          </h4>
+          <h4 class="text-green-mist text-xs uppercase tracking-widest font-semibold">Day Streak</h4>
           <div class="mt-2">
             <div class="flex items-end h-16 table-cell">
               <span class="text-4xl text-form-green leading-10">12</span>
@@ -47,17 +44,11 @@
       </div>
       <div class="flex-1 h-full pl-3">
         <div class="h-full bg-limed-spruce rounded-md p-3">
-          <h4
-            class="text-green-mist text-xs uppercase tracking-widest font-semibold"
-          >
-            Sessions
-          </h4>
+          <h4 class="text-green-mist text-xs uppercase tracking-widest font-semibold">Sessions</h4>
           <div class="mt-2">
             <div class="flex items-end h-16 table-cell">
               <span class="text-4xl leading-10">6</span>
-              <span class="text-xs ml-2 leading-10 tracking-wide"
-                >Completed</span
-              >
+              <span class="text-xs ml-2 leading-10 tracking-wide">Completed</span>
             </div>
           </div>
         </div>
@@ -66,8 +57,13 @@
   </div>
 </template>
 <script>
+import Icon from '@/components/base/IconComponent'
+
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    Icon
+  }
 }
 </script>
 
