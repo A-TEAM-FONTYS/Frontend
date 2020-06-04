@@ -9,14 +9,8 @@
         <Chart />
       </div>
       <div class="flex justify-between mx-16">
-        <div class="flex flex-col text-center">
-          <span class="text-pampas text-lg">23</span>
-          <label class="text-green-mist text-sm">Unlocks</label>
-        </div>
-        <div class="flex flex-col text-center">
-          <span class="text-pampas text-lg">45</span>
-          <label class="text-green-mist text-sm">Notifications</label>
-        </div>
+        <Card name="Unlocks" :amount="25" />
+        <Card name="Notifications" :amount="48" />
       </div>
     </div>
   </div>
@@ -25,11 +19,13 @@
 <script>
 import Picker from '@/components/stats/PickerComponent'
 import Chart from '@/components/Usage/UsageChartComponent'
+import Card from '@/components/Usage/StatCardComponent'
 
 export default {
   components: {
     Picker,
-    Chart
+    Chart,
+    Card
   },
   methods: {
     test(active) {
