@@ -1,7 +1,18 @@
 module.exports = {
   purge: [],
   theme: {
+
     extend: {
+      borderRadius: {
+        'xlg': '18px'
+      },
+      height: {
+
+        '14': '52px'
+      },
+      width: {
+        '14': '52px'
+      },
       fontFamily: {
         serif: ['"Bree Serif"']
       },

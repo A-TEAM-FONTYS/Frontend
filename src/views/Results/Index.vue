@@ -3,18 +3,23 @@
     <div class="flex justify-between">
       <h1 class="text-2xl">App usage</h1>
       <div class="flex justify-end">
-        <img src="@/assets/quizArt.png" class="sm:w-24 sm:h-24" />
+        <img src="@/assets/quizArt.png" class />
       </div>
     </div>
     <div class="flex flex-col">
-      <div>yeet</div>
+      <Quiz />
       <div>yeet</div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import Quiz from '@/components/quiz/OverViewComponent'
+export default {
+  components: {
+    Quiz
+  }
+}
 </script>
 
 <style>
