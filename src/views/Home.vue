@@ -15,40 +15,38 @@
         </div>
       </div>
     </div>
-    <div class="w-full h-40 -mt-16 overflow-hidden">
+    <div class="w-full -mt-16 overflow-hidden">
       <div class="flex justify-center">
-        <div
-          class="bg-pampas w-20 h-20 rounded-full object-center object-none border-8 border-outer-space"
-        >
+        <div class="bg-pampas w-20 h-20 rounded-full border-8 border-outer-space">
           <Icon name="pen-tool" :width="32" :height="32" class="text-limed-spruce m-4" />
         </div>
       </div>
-      <div class="-mt-8 w-full h-32 bg-limed-spruce rounded-md text-center">
+      <div class="-mt-8 w-full pb-4 bg-limed-spruce rounded-md text-center">
         <div class="inline-block align-bottom">
-          <h3 class="text-xl font-bold mt-12">Continue your daily quiz</h3>
-          <p class="text-sm font-light">Become aware of your app usage</p>
+          <h3 class="text-2xl mt-12">Continue your daily quiz</h3>
+          <p class="text-sm">Become aware of your app usage</p>
         </div>
       </div>
     </div>
     <div class="flex w-full h-24 mt-6 overflow-hidden">
       <div class="flex-1 h-full pr-3">
         <div class="h-full bg-limed-spruce rounded-md p-3">
-          <h4 class="text-green-mist text-xs uppercase tracking-widest font-semibold">Day Streak</h4>
+          <h4 class="text-green-mist text-xs uppercase tracking-widest">Day Streak</h4>
           <div class="mt-2">
             <div class="flex items-end h-16 table-cell">
               <span class="text-4xl text-form-green leading-10">12</span>
-              <span class="text-xs ml-2 leading-10 tracking-wide">Days</span>
+              <span class="text-xs ml-2 leading-10 tracking-wide">days</span>
             </div>
           </div>
         </div>
       </div>
       <div class="flex-1 h-full pl-3">
         <div class="h-full bg-limed-spruce rounded-md p-3">
-          <h4 class="text-green-mist text-xs uppercase tracking-widest font-semibold">Sessions</h4>
+          <h4 class="text-green-mist text-xs uppercase tracking-widest">Sessions</h4>
           <div class="mt-2">
             <div class="flex items-end h-16 table-cell">
               <span class="text-4xl leading-10">6</span>
-              <span class="text-xs ml-2 leading-10 tracking-wide">Completed</span>
+              <span class="text-xs ml-2 leading-10 tracking-wide">completed</span>
             </div>
           </div>
         </div>
