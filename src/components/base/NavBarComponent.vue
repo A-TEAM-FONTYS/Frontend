@@ -9,7 +9,7 @@
         <Icon name="home" />
       </router-link>
 
-      <router-link :to="{ name: 'ranking' }" class="opacity-50 px-4">
+      <router-link :to="{ name: 'results' }" class="opacity-50 px-4">
         <Icon name="star" />
       </router-link>
     </div>
