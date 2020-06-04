@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-pampas relative h-screen px-6 py-10">
+  <div class="bg-pampas relative px-6 py-10">
     <div class="flex justify-center pb-12">
       <svg
         fill="none"
@@ -31,7 +31,7 @@
     </div>
 
     <div
-      class="fixed inset-x-0 bottom-0 flex justify-center sm:hidden -mb-24 sm:-mb-48 z-0"
+      class="fixed inset-x-0 bottom-0 flex justify-center hidden sm:flex -mb-24 sm:-mb-48 z-0"
     >
       <img :src="require('@/assets/img/register_page_img.svg')" />
     </div>
