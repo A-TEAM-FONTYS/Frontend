@@ -8,7 +8,14 @@ export default {
     return {
       chartData: {
         datasets: [],
-        labels: []
+        labels: [
+          'Facebook',
+          'Whatsapp',
+          'Snapchat',
+          'Youtube',
+          'Twitter',
+          'Overig'
+        ]
       },
       chartOptions: {
         legend: {
@@ -29,10 +36,18 @@ export default {
     datasets() {
       return [
         {
-          data: this.apps.map(app => this.getAppTotalUsageById(app.id)),
-          backgroundColor: '#ffffff', //give color list
+          //data: this.apps.map(app => this.getAppTotalUsageById(app.id)),
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: [
+            '#D6D4AF',
+            '#B6B99C',
+            '#969E88',
+            '#778475',
+            '#576961',
+            '#475B58'
+          ], //give color list
           borderColor: '#374E4E',
-          borderWidth: 1
+          borderWidth: 0
         }
       ]
     },
