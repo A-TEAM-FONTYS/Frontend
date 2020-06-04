@@ -8,6 +8,16 @@
       <div class="flex justify-center">
         <Chart />
       </div>
+      <div class="flex justify-between mx-16">
+        <div class="flex flex-col text-center">
+          <span class="text-pampas text-lg">23</span>
+          <label class="text-green-mist text-sm">Unlocks</label>
+        </div>
+        <div class="flex flex-col text-center">
+          <span class="text-pampas text-lg">45</span>
+          <label class="text-green-mist text-sm">Notifications</label>
+        </div>
+      </div>
     </div>
   </div>
 </template>
