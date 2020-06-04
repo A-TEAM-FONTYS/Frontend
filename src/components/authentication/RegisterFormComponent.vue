@@ -82,6 +82,9 @@
           <div v-if="!$v.form.confirmPassword.sameAsPassword">
             Confirmation password does not match password
           </div>
+          <div v-if="!$v.form.confirmPassword.required">
+            Confirmation password is required
+          </div>
         </div>
       </div>
       <div
@@ -121,9 +124,7 @@ export default {
       username: { required },
       email: { required, email },
       password: { required },
-      confirmPassword: {
-        sameAsPassword: sameAs('password')
-      }
+      confirmPassword: { required, sameAsPassword: sameAs('password') }
     }
   },
   methods: {

@@ -17,7 +17,7 @@
         />
       </svg>
     </div>
-    <div class="w-full sm:w-1/2 lg:w-1/3 sm:mx-auto z-10">
+    <div class="w-full sm:w-1/2 lg:w-1/3 sm:mx-auto relative z-10">
       <register-form-component />
 
       <div class="flex flex-col items-center justify-center pt-4 sm:mx-auto">
@@ -33,7 +33,7 @@
     <div
       class="fixed inset-x-0 bottom-0 flex justify-center sm:hidden -mb-24 sm:-mb-48 z-0"
     >
-      <img :src="require('@/assets/img/register_page_img.svg')" class="z-0" />
+      <img :src="require('@/assets/img/register_page_img.svg')" />
     </div>
   </div>
 </template>
