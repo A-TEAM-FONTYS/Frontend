@@ -20,7 +20,8 @@ const routes = [
   {
     path: '/register',
     name: 'Register',
-    component: Register
+    component: Register,
+    meta: { transitionName: 'slide' }
   }
 ]
 
