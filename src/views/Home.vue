@@ -1,5 +1,5 @@
 <template>
-  <div class="font-serif bg-outer-space h-screen w-screen p-6 text-white">
+  <div class="font-serif bg-outer-space h-screen w-screen p-6 text-pampas">
     <div class="grid grid-rows-3 grid-flow-col gap-10">
       <div class="row-span-2">
         <div class="h-full flex items-center">
