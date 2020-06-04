@@ -1,5 +1,5 @@
 <template>
-  <div class="py-10 px-6 text-pampas font-serif">
+  <div class="py-6 px-6 text-pampas font-serif">
     <h1 class="text-2xl">App usage</h1>
     <div class="flex flex-col">
       <div class="flex justify-center">
