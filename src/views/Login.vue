@@ -17,7 +17,7 @@
         />
       </svg>
     </div>
-    <div class="w-full sm:w-1/2 lg:w-1/3 sm:mx-auto z-10">
+    <div class="w-full sm:w-1/2 lg:w-1/3 sm:mx-auto relative z-10">
       <login-form-component />
 
       <div class="flex flex-col items-center justify-center pt-4 sm:mx-auto">
