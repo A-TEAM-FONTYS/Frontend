@@ -2,6 +2,9 @@ module.exports = {
   purge: [],
   theme: {
     extend: {
+      fontFamily: {
+        serif: ['"Bree Serif"']
+      },
       colors: {
         anzac: '#E1AA47',
         sunglow: '#FCCE4B',
