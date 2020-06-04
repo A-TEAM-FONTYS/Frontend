@@ -7,11 +7,10 @@ module.exports = {
         'xlg': '18px'
       },
       height: {
-
-        '14': '52px'
+        '14': '3.25rem'
       },
       width: {
-        '14': '52px'
+        '14': '3.25rem'
       },
       fontFamily: {
         serif: ['"Bree Serif"']
