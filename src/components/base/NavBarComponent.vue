@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar text-limed-sprouce flex items-center fixed bottom-0 left-0 w-full bg-pampas">
-    <div class="container mx-auto px-8 flex justify-between">
+    <div class="container mx-auto px-8 flex justify-around md:w-1/2">
       <router-link :to="{ name: 'stats' }" class="opacity-50 px-4">
         <Icon name="pie-chart" />
       </router-link>
