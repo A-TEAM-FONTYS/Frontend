@@ -3,6 +3,7 @@ import api from '@/services/usage.js'
 export default {
   namespaced: true,
   state: {
+    usageData: []
   },
   mutations: {
     SET_USAGE_DATA(state, data) {
@@ -16,7 +17,7 @@ export default {
     }
   },
   actions: {
-    setUsageData({ commit }) {
+    getUsageData({ commit }) {
       return api
         .getUsageData()
         .then(data => {
@@ -37,6 +38,8 @@ export default {
     loading: state => state.loading,
 
     error: state => state.error,
+
+    allData: state => state.usageData
 
   }
 }
