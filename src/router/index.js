@@ -16,12 +16,14 @@ const routes = [
   {
     path: '/stats',
     name: 'stats',
-    component: () => import('../views/Stats/Index.vue')
+    component: () => import('../views/Stats/Index.vue'),
+    meta: { requiresAuth: true }
   },
   {
     path: '/results',
     name: 'results',
-    component: () => import('../views/Results/Index.vue')
+    component: () => import('../views/Results/Index.vue'),
+    meta: { requiresAuth: true }
   },
   {
     path: '/login',
