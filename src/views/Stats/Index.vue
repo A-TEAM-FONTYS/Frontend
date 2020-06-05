@@ -18,8 +18,8 @@
 
 <script>
 import Picker from '@/components/stats/PickerComponent'
-import Chart from '@/components/Usage/UsageChartComponent'
-import Card from '@/components/Usage/StatCardComponent'
+import Chart from '@/components/usage/UsageChartComponent'
+import Card from '@/components/usage/StatCardComponent'
 
 export default {
   components: {

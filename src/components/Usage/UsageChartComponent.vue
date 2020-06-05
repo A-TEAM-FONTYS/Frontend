@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import DoughnutChart from '@/components/Usage/DoughnutChartComponent'
+import DoughnutChart from '@/components/usage/DoughnutChartComponent'
 
 export default {
   components: {
