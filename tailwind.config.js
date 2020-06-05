@@ -1,7 +1,9 @@
 module.exports = {
   purge: [],
   theme: {
-
+    fontFamily: {
+      serif: ['"Bree Serif"']
+    },
     extend: {
       zIndex: {
         '-1': '-1',
