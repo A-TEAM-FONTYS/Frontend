@@ -3,6 +3,17 @@ module.exports = {
   theme: {
 
     extend: {
+      zIndex: {
+        '-1': '-1',
+      },
+      inset: {
+        '-32': '-8rem',
+        '-24': '-6rem',
+        '-16': '-4rem',
+        '-12': '-3rem',
+        '-8': '-2rem',
+        '-4': '-1rem'
+      },
       borderRadius: {
         'xlg': '18px'
       },
