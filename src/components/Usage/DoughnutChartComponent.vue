@@ -1,7 +1,8 @@
+
 <script>
 import { Doughnut } from 'vue-chartjs'
 
-import { mapActions, mapState } from 'vuex'
+import { mapState } from 'vuex'
 
 export default {
   extends: Doughnut,
@@ -21,19 +22,19 @@ export default {
     }
   },
   created() {
-    this.getUsageData()
     this.chartData.datasets = this.datasets
     this.chartData.labels = this.labels
+    this.$store.dispatch('usage/getUsageData')
   },
   mounted() {
     this.renderChart(this.chartData, this.chartOptions)
   },
   computed: {
-    ...mapState('usage', ['usageData']),
+    ...mapState('usage', ['data']),
     datasets() {
       return [
         {
-          data: [1, 2, 5, 6, 3, 4],
+          data: this.data.map(i => i.timeUsed),
           backgroundColor: [
             '#D6D4AF',
             '#B6B99C',
@@ -48,11 +49,9 @@ export default {
       ]
     },
     lables() {
-      return [1, 2, 3, 4, 5, 6]
+      return this.data.map(i => i.appName)
     }
   },
-  methods: {
-    ...mapActions('usage', ['getUsageData'])
-  }
+  methods: {}
 }
 </script>
