@@ -8,6 +8,7 @@
         : 'bg-limed-spruce'
     "
   >
+    <notifications group="auth" class="my-style" position="top center" />
     <transition :name="transitionName" mode="out-in">
       <router-view />
     </transition>
