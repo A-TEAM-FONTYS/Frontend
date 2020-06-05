@@ -61,7 +61,7 @@
           <div v-if="!$v.form.email.required">
             Email is required
           </div>
-          <div v-if="!$v.form.email.email">
+          <div class="text-sm text-red-400" v-if="!$v.form.email.email">
             Please enter a valid email address
           </div>
         </div>
@@ -135,6 +135,7 @@
 <script>
 import Icon from '@/components/base/IconComponent.vue'
 import { required, email, sameAs } from 'vuelidate/lib/validators'
+import { mapActions } from 'vuex'
 
 export default {
   data() {
@@ -161,12 +162,20 @@ export default {
     }
   },
   methods: {
+    ...mapActions('user', ['register']),
     submit() {
       this.$v.form.$touch()
       // if its still pending or an error is returned do not submit
       if (this.$v.form.$pending || this.$v.form.$error) return
       // to form submit after this
-      alert('Form submitted')
+      const user = {
+        email: this.form.email,
+        password: this.form.password,
+        firstName: this.form.firstname,
+        lastName: this.form.lastname
+      }
+
+      this.register(user)
     }
   }
 }
