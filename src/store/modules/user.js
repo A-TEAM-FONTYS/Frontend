@@ -59,6 +59,8 @@ export default {
           commit('SET_USER_DATA', user)
           commit('SET_ERROR', null)
           commit('SET_LOADING', false)
+
+          router.push('/')
         })
         .catch(error => {
           // If the request fails, remove user token
