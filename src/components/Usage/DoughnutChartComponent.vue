@@ -1,7 +1,3 @@
-<template>
-  <div>{{ test }}</div>
-</template>
-
 <script>
 import { Doughnut } from 'vue-chartjs'
 
@@ -9,9 +5,7 @@ import { mapActions, mapState } from 'vuex'
 
 export default {
   extends: Doughnut,
-  props: {
-    test: []
-  },
+  props: {},
   data() {
     return {
       chartData: {
@@ -39,7 +33,7 @@ export default {
     datasets() {
       return [
         {
-          data: this.usageData.map(data => data.timeUsed),
+          data: [1, 2, 5, 6, 3, 4],
           backgroundColor: [
             '#D6D4AF',
             '#B6B99C',
@@ -54,7 +48,7 @@ export default {
       ]
     },
     lables() {
-      return this.usageData.map(data => data.appName)
+      return [1, 2, 3, 4, 5, 6]
     }
   },
   methods: {

@@ -19,9 +19,9 @@ export default {
   methods: {
     ...mapActions('usage', ['getUsageData'])
   },
+  computed: mapGetters('usage', ['allData']),
   created() {
     this.getUsageData()
-  },
-  computed: mapGetters('usage', ['allData'])
+  }
 }
 </script>
