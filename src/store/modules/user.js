@@ -36,7 +36,7 @@ export default {
           commit('SET_ERROR', null)
           commit('SET_LOADING', false)
 
-          router.push('/')
+          router.push('/home')
         })
         .catch(error => {
           // If the request fails, remove user token
@@ -60,7 +60,7 @@ export default {
           commit('SET_ERROR', null)
           commit('SET_LOADING', false)
 
-          router.push('/')
+          router.push('/home')
         })
         .catch(error => {
           // If the request fails, remove user token

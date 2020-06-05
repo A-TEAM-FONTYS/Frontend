@@ -3,7 +3,7 @@ import api from '@/services/usage.js'
 export default {
   namespaced: true,
   state: {
-    data: null
+    data: []
   },
   mutations: {
     SET_USAGE_DATA(state, data) {
