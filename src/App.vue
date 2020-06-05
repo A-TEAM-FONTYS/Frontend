@@ -5,7 +5,7 @@
     :class="
       this.$route.path == '/login' || this.$route.path == '/register'
         ? 'bg-pampas'
-        : 'bg-limed-spruce'
+        : 'bg-outer-space'
     "
   >
     <notifications group="auth" class="my-style" position="top center" />

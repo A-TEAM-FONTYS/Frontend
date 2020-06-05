@@ -7,7 +7,7 @@
         <div class="h-full flex items-center">
           <div>
             <span class="block w-full text-2xl">Welcome back,</span>
-            <span class="font-medium text-xl">NickyBouwmans12</span>
+            <span class="font-medium text-xl">{{ user.firstName }}</span>
           </div>
         </div>
       </div>
@@ -19,11 +19,20 @@
     </div>
     <div class="w-full -mt-16 overflow-hidden">
       <div class="flex justify-center">
-        <div class="bg-pampas w-20 h-20 rounded-full border-8 border-outer-space">
-          <Icon name="pen-tool" :width="32" :height="32" class="text-limed-spruce m-4" />
+        <div
+          class="bg-pampas w-20 h-20 rounded-full border-8 border-outer-space"
+        >
+          <Icon
+            name="pen-tool"
+            :width="32"
+            :height="32"
+            class="text-limed-spruce m-4"
+          />
         </div>
       </div>
-      <div class="-mt-8 w-full pb-4 bg-limed-spruce rounded-md text-center overflow-hidden">
+      <div
+        class="-mt-8 w-full pb-4 bg-limed-spruce rounded-md text-center overflow-hidden"
+      >
         <div class="relative z-10">
           <img
             src="@/assets/circlesArt.png"
@@ -48,7 +57,9 @@
               src="@/assets/linesArt.png"
               class="absolute -bottom-4 -right-16 transform rotate-45 -z-1"
             />
-            <h4 class="text-green-mist text-xs uppercase tracking-widest">Day Streak</h4>
+            <h4 class="text-green-mist text-xs uppercase tracking-widest">
+              Day Streak
+            </h4>
             <div class="mt-2">
               <div class="flex items-end h-16 table-cell">
                 <span class="text-4xl text-form-green leading-10">12</span>
@@ -65,11 +76,15 @@
               src="@/assets/dotsArt.png"
               class="absolute -bottom-4 -right-24 transform rotate-90 -z-1"
             />
-            <h4 class="text-green-mist text-xs uppercase tracking-widest">Sessions</h4>
+            <h4 class="text-green-mist text-xs uppercase tracking-widest">
+              Sessions
+            </h4>
             <div class="mt-2">
               <div class="flex items-end h-16 table-cell">
                 <span class="text-4xl leading-10">6</span>
-                <span class="text-xs ml-2 leading-10 tracking-wide">completed</span>
+                <span class="text-xs ml-2 leading-10 tracking-wide"
+                  >completed</span
+                >
               </div>
             </div>
           </div>
@@ -80,11 +95,14 @@
 </template>
 <script>
 import Icon from '@/components/base/IconComponent'
-
+import { mapState } from 'vuex'
 export default {
   name: 'Home',
   components: {
     Icon
+  },
+  computed: {
+    ...mapState('user', ['user'])
   }
 }
 </script>
