@@ -7,7 +7,7 @@
         <div class="h-full flex items-center">
           <div>
             <span class="block w-full text-2xl">Welcome back,</span>
-            <span class="font-medium text-xl">{{ user.firstName }}</span>
+            <span class="font-medium text-2xl">{{ user.firstName }}</span>
           </div>
         </div>
       </div>
