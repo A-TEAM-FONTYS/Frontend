@@ -9,7 +9,7 @@
     </div>
       <div class="flex justify-center">
         <div class="w-20 h-20 rounded-full bg-pampas border-8 border-outer-space">
-          <img src="@/assets/QuestionMark.png">
+          <img class="mt-4" src="@/assets/QuestionMark.png">
         </div>
       </div>
       <div class="-mt-10 w-full h-32 bg-limed-spruce rounded-lg text-center text-pampas">
@@ -65,6 +65,14 @@
         </div>
 </div>
 </template>
+<style scoped>
+.number-input input:focus{
+    outline: none;
+}
+.number-input button:focus{
+    outline: none;
+}
+</style>
 <script>
 
 export default {
