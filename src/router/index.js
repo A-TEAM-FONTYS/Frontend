@@ -8,20 +8,20 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/home',
+    path: '/',
     name: 'home',
     component: Home,
     meta: { requiresAuth: true }
   },
   {
-    path: "/stats",
-    name: "stats",
-    component: () => import("../views/Stats/Index.vue")
+    path: '/stats',
+    name: 'stats',
+    component: () => import('../views/Stats/Index.vue')
   },
   {
-    path: "/results",
-    name: "results",
-    component: () => import("../views/Results/Index.vue")
+    path: '/results',
+    name: 'results',
+    component: () => import('../views/Results/Index.vue')
   },
   {
     path: '/login',
