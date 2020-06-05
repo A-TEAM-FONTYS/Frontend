@@ -24,7 +24,6 @@ export default {
       return api
         .login(credentials)
         .then(res => {
-          console.log(res)
           // set user object with token
           const user = res.user
           user['token'] = res.token
