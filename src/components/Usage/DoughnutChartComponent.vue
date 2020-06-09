@@ -48,7 +48,7 @@ export default {
         }
       ]
     },
-    lables() {
+    labels() {
       return this.data.map(i => i.appName)
     }
   },
