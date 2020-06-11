@@ -2,10 +2,12 @@
 <div class="bg-outer-space h-max w-max p-6 text-pampas">
     <div>
       <h1 class="font-serif text-3xl">Let's start with some questions
-        <a class="absolute float-right ">
-     <img src="@/assets/Boom.png">
-   </a>
       </h1>
+    <div class="row-span-2">
+      <div class="flex justify-end">
+        <img src="@/assets/Boom.png" class="w-24 h-24"/>
+      </div>
+    </div>
     </div>
       <div class="flex justify-center">
         <div class="w-20 h-20 rounded-full bg-pampas border-8 border-outer-space">
