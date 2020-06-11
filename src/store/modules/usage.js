@@ -6,9 +6,8 @@ export default {
     data: []
   },
   mutations: {
-    SET_USAGE_DATA(state, data) {
-      state.data = data
-    },
+    SET_USAGE_DATA: (state, data) => (state.data = data)
+    ,
     SET_LOADING(state, payload) {
       state.loading = payload
     },
@@ -17,11 +16,10 @@ export default {
     }
   },
   actions: {
-    getUsageData({ commit }) {
+    async getUsageData({ commit }) {
       return api
         .getUsageData()
         .then(data => {
-          console.log(data)
           commit('SET_USAGE_DATA', data)
           commit('SET_ERROR', null)
           commit('SET_LOADING', false)
@@ -35,9 +33,12 @@ export default {
     },
   },
   getters: {
+    allAppData: state => state.data,
+
     loading: state => state.loading,
 
     error: state => state.error,
+
 
 
   }

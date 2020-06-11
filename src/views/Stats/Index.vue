@@ -6,11 +6,17 @@
         <Picker @updatePicker="test" class="mt-4" />
       </div>
       <div class="flex justify-center">
-        <Chart />
+        <Chart :chartData="allAppData" />
       </div>
       <div class="flex justify-between mx-16">
         <Card name="Unlocks" :amount="25" />
         <Card name="Notifications" :amount="48" />
+      </div>
+    </div>
+    <div class="mt-4">
+      <div v-for="appData in allAppData" :key="appData.id" class="flex justify-between">
+        <div>{{ appData.appName }}</div>
+        <div>{{ appData.timeUsed}}</div>
       </div>
     </div>
   </div>
@@ -20,6 +26,7 @@
 import Picker from '@/components/stats/PickerComponent'
 import Chart from '@/components/usage/UsageChartComponent'
 import Card from '@/components/usage/StatCardComponent'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   components: {
@@ -28,9 +35,17 @@ export default {
     Card
   },
   methods: {
+    ...mapActions('usage', ['getUsageData']),
+
     test(active) {
       console.log(active)
     }
+  },
+  computed: {
+    ...mapGetters('usage', ['allAppData'])
+  },
+  created() {
+    this.getUsageData()
   }
 }
 </script>

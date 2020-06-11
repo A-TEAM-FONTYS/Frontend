@@ -2,7 +2,7 @@
 <script>
 import { Doughnut } from 'vue-chartjs'
 
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   extends: Doughnut,
@@ -24,17 +24,17 @@ export default {
   created() {
     this.chartData.datasets = this.datasets
     this.chartData.labels = this.labels
-    this.$store.dispatch('usage/getUsageData')
+    //this.renderChart(this.chartData, this.chartOptions)
   },
   mounted() {
     this.renderChart(this.chartData, this.chartOptions)
   },
   computed: {
-    ...mapState('usage', ['data']),
+    ...mapGetters('usage', ['allAppData']),
     datasets() {
       return [
         {
-          data: this.data.map(i => i.timeUsed),
+          data: this.allAppData.map(i => i.timeUsed),
           backgroundColor: [
             '#D6D4AF',
             '#B6B99C',
@@ -49,7 +49,7 @@ export default {
       ]
     },
     labels() {
-      return this.data.map(i => i.appName)
+      return this.allAppData.map(i => i.appName)
     }
   },
   methods: {}
