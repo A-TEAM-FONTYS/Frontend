@@ -1,21 +1,17 @@
+
 <script>
 import { Doughnut } from 'vue-chartjs'
-import { mapState, mapGetters } from 'vuex'
+
+import { mapGetters } from 'vuex'
 
 export default {
   extends: Doughnut,
+  props: {},
   data() {
     return {
       chartData: {
         datasets: [],
-        labels: [
-          'Facebook',
-          'Whatsapp',
-          'Snapchat',
-          'Youtube',
-          'Twitter',
-          'Overig'
-        ]
+        labels: []
       },
       chartOptions: {
         legend: {
@@ -33,29 +29,33 @@ export default {
     this.renderChart(this.chartData, this.chartOptions)
   },
   computed: {
+    ...mapGetters('usage', ['allAppData']),
     datasets() {
       return [
         {
-          //data: this.apps.map(app => this.getAppTotalUsageById(app.id)),
-          data: [12, 19, 3, 5, 2, 3],
+          data: this.allAppData.map(i => i.timeUsed),
           backgroundColor: [
             '#D6D4AF',
             '#B6B99C',
             '#969E88',
             '#778475',
             '#576961',
+            '#475B58',
+            '#B6B99C',
+            '#969E88',
+            '#778475',
+            '#576961',
             '#475B58'
-          ], //give color list
+          ],
           borderColor: '#374E4E',
           borderWidth: 0
         }
       ]
     },
     labels() {
-      return this.apps.map(app => app.name)
-    },
-    ...mapState('app', ['apps']),
-    ...mapGetters('app', ['getAppTotalUsageById'])
-  }
+      return this.allAppData.map(i => i.appName)
+    }
+  },
+  methods: {}
 }
 </script>
