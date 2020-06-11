@@ -21,14 +21,18 @@
         </div>
       </div>
       <input
-        class="mt-5 bg-transparent rounded-lg text-sm w-full h-16 font-serif text-pampas"
+        class="mt-5 bg-transparent rounded-lg text-sm w-full h-16 font-serif text-pampas border-2 border-limed-spruce" placeholder="Enter your answer here."
         type="text"
-        style="border: 2.5px solid #273A3A;"
         />
         <div class="mt-10 w-full h-16 bg-limed-spruce rounded-lg text-center text-pampas">
             <div class="inline-block align-bottom">
                 <p class="text-s font-serif font-light mt-5">At what age did you start using social media?</p>
             </div>
+        </div>
+        <div class="mt-5 text-pampas flex justify-center">
+          <input 
+          v-model.number="number" type="number" step="1"
+          class="bg-transparent rounded-lg font-serif border-2 border-limed-spruce h-auto w-12">
         </div>
         <div class="mt-10 w-full h-16 bg-limed-spruce rounded-lg text-center text-pampas">
             <div class="inline-block align-bottom">
@@ -36,9 +40,8 @@
             </div>
         </div>
         <input
-        class="mt-5 bg-transparent rounded-lg text-sm w-full h-16 font-serif text-pampas"
+        class="mt-5 bg-transparent rounded-lg text-sm w-full h-16 font-serif text-pampas border-2 border-limed-spruce" placeholder="Enter your answer here."
         type="text"
-        style="border: 2.5px solid #273A3A;"
         />
         <div class="mt-10 w-full h-16 bg-limed-spruce rounded-lg text-center text-pampas">
             <div class="inline-block align-bottom">
@@ -46,24 +49,38 @@
             </div>
         </div>
         <input
-        class="mt-5 bg-transparent rounded-lg text-sm w-full h-16 font-serif text-pampas"
+        class="mt-5 bg-transparent rounded-lg text-sm w-full h-16 font-serif text-pampas border-2 border-limed-spruce" placeholder="Enter your answer here."
         type="text"
-        style="border: 2.5px solid #273A3A;"
         />
         <div class="mt-10 w-full h-16 bg-limed-spruce rounded-lg text-center text-pampas">
             <div class="inline-block align-bottom">
                 <p class="text-s font-serif font-light mt-5">How much messages do you think you get on social media daily?</p>
             </div>
         </div>
+        <div class="mt-5 text-pampas flex justify-center">
+          <input 
+          v-model.number="number" type="number" step="1"
+          class="bg-transparent rounded-lg font-serif border-2 border-limed-spruce h-auto w-12">
+        </div>
         <div class="mt-10 w-full h-16 bg-limed-spruce rounded-lg text-center text-pampas">
             <div class="inline-block align-bottom">
                 <p class="text-s font-serif font-light mt-5">How many times do you answer these messages?</p>
             </div>
         </div>
+        <div class="mt-5 text-pampas flex justify-center">
+          <input 
+          v-model.number="number" type="number" step="1"
+          class="bg-transparent rounded-lg font-serif border-2 border-limed-spruce h-auto w-12">
+        </div>
         <div class="mt-10 w-full h-16 bg-limed-spruce rounded-lg text-center text-pampas">
             <div class="inline-block align-bottom">
                 <p class="text-s font-serif font-light mt-5">How much value do you hold for comments on your social media?</p>
             </div>
+        </div>
+        <div class="mt-5 text-pampas flex justify-center">
+          <input 
+          v-model.number="number" type="number" step="1"
+          class="bg-transparent rounded-lg font-serif border-2 border-limed-spruce h-auto w-12">
         </div>
 </div>
 </template>
