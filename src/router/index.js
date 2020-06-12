@@ -26,6 +26,12 @@ const routes = [
     meta: { requiresAuth: true, hideNavigation: true }
   },
   {
+    path: '/quiz/setup',
+    name: 'quiz.setup',
+    component: () => import('@/views/Quiz/Setup.vue'),
+    meta: { requiresAuth: true, hideNavigation: true }
+  },
+  {
     path: '/results',
     name: 'results',
     component: () => import('@/views/Results/Index.vue'),

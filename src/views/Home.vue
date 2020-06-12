@@ -15,7 +15,7 @@
           src="@/assets/dotsArt.png"
           class="absolute -bottom-8 -right-24 transform rotate-90 -z-1"
         />
-        <a href="/quiz">
+        <a href="/quiz/setup">
           <div class="flex flex-col p-2">
             <div class="text-sm mb-2 text-green-mist">Setup</div>
             <h3 class="text-2xl">Start the intro quiz!</h3>
