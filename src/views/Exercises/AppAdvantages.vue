@@ -92,7 +92,7 @@ export default {
       console.log(this.checkedSuggestions)
     },
     addCustomSuggestion(customSuggestion) {
-      this.suggestions.push({ suggestion: customSuggestion.suggestion })
+      this.suggestions.push({ suggestion: customSuggestion.suggestion, checked: true })
       this.customSuggestion.suggestion = ''
       console.log(customSuggestion)
     },
