@@ -27,6 +27,7 @@
         <li>
           <div class="flex">
             <input
+            v-on:keyup.enter="addCustomSuggestion(customSuggestion)"
               v-model="customSuggestion.suggestion"
               class="text-white bg-kindagreen text-sm w-full p-1 border-solid border border-white rounded-lg"
               type="text"
@@ -97,9 +98,6 @@ export default {
     },
     saveInDatabase() {
       console.log('not implemented')
-    },
-    test(item) {
-      console.log(item.suggestion)
     }
   },
   components: {
