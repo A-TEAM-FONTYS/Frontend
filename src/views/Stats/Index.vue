@@ -6,7 +6,7 @@
         <Picker @updatePicker="test" class="mt-4" />
       </div>
       <div class="flex justify-center">
-        <Chart :chartData="allAppData" />
+        <Chart />
       </div>
       <div class="flex justify-between mx-16">
         <Card name="Unlocks" :amount="25" />
@@ -14,9 +14,13 @@
       </div>
     </div>
     <div class="mt-4">
-      <div v-for="appData in allAppData" :key="appData.id" class="flex justify-between">
+      <div
+        v-for="appData in allAppData"
+        :key="appData.id"
+        class="flex justify-between"
+      >
         <div>{{ appData.appName }}</div>
-        <div>{{ appData.timeUsed}}</div>
+        <div>{{ appData.timeUsed }}</div>
       </div>
     </div>
   </div>
@@ -50,5 +54,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>
