@@ -12,9 +12,7 @@
     <transition :name="transitionName" mode="out-in">
       <router-view />
     </transition>
-    <NavBar
-      v-if="this.$route.path != '/login' && this.$route.path != '/register'"
-    />
+    <NavBar v-if="!$route.meta.hideNavigation" />
   </div>
 </template>
 

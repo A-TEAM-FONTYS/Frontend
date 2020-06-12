@@ -16,25 +16,32 @@ const routes = [
   {
     path: '/stats',
     name: 'stats',
-    component: () => import('../views/Stats/Index.vue'),
+    component: () => import('@/views/Stats/Index.vue'),
     meta: { requiresAuth: true }
+  },
+  {
+    path: '/quiz',
+    name: 'quiz',
+    component: () => import('@/views/Quiz/Index.vue'),
+    meta: { requiresAuth: true, hideNavigation: true }
   },
   {
     path: '/results',
     name: 'results',
-    component: () => import('../views/Results/Index.vue'),
+    component: () => import('@/views/Results/Index.vue'),
     meta: { requiresAuth: true }
   },
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: Login,
+    meta: { hideNavigation: true }
   },
   {
     path: '/register',
     name: 'Register',
     component: Register,
-    meta: { transitionName: 'slide' }
+    meta: { transitionName: 'slide', hideNavigation: true }
   }
 ]
 
