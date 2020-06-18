@@ -10,7 +10,7 @@
   >
     <notifications group="auth" class="my-style" position="top center" />
     <transition :name="transitionName" mode="out-in">
-      <router-view />
+      <router-view class="mb-16" />
     </transition>
     <NavBar v-if="!$route.meta.hideNavigation" />
   </div>
@@ -44,6 +44,10 @@ export default {
 </script>
 
 <style lang="postcss">
+body {
+  @apply bg-outer-space;
+}
+
 .slide-left-enter-active,
 .slide-left-leave-active,
 .slide-right-enter-active,
