@@ -82,6 +82,13 @@
           v-model.number="number" type="number" step="1"
           class="bg-transparent rounded-lg font-serif border-2 border-limed-spruce h-auto w-12">
         </div>
+      <footer class="left-0 bottom-0 w-full fixed p-6 bg-outer-space">
+        <div class="button-group">
+          <button class="w-24 p-1 float-left bg-limed-spruce text-sunglow rounded-md">Previous</button>
+          <button class="w-24 p-1 float-right bg-sunglow text-limed-spruce rounded-md">Next</button>
+        </div>
+      </footer>
+
 </div>
 </template>
 <style scoped>
