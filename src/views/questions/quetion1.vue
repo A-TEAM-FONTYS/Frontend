@@ -27,16 +27,17 @@
         <v-button name="Tiktok"></v-button>
     </div>
     <div class="mt-1 flex">
-       <v-button name="10"></v-button>
-       <v-button name="10"></v-button>
-       <v-button name="10"></v-button>
+       <v-button name="LinkedIn"></v-button>
+       <v-button name="Imgur"></v-button>
+       <v-button name="Instagram"></v-button>
     </div>
     <div class="mt-1 flex">
-        <v-button name="10"></v-button>
-        <v-button name="10"></v-button>
-        <v-button name="10"></v-button>
-        <v-button name="10"></v-button>
+        <v-button name="Youtube"></v-button>
+        <v-button name="Tinder"></v-button>
+        <v-button name="Pinterest"></v-button>
+        <v-button name="Tumblr"></v-button>
     </div>
+    <v-numberinput></v-numberinput>
     <v-footer></v-footer>
 </div>
 </template>
