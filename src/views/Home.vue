@@ -41,7 +41,7 @@
         class="-mt-10 pb-4 bg-limed-spruce rounded-md text-center overflow-hidden"
       >
         <div class="relative z-10">
-          <a href="/quiz">
+          <div @click.prevent="startNewQuiz">
             <img
               src="@/assets/circlesArt.png"
               class="absolute -top-8 -left-8 transform rotate-45 -z-1"
@@ -54,7 +54,7 @@
               <h3 class="text-2xl mt-12">Do your daily quiz</h3>
               <p class="text-xs">Become aware of your app usage</p>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </div>
@@ -104,7 +104,7 @@
 </template>
 <script>
 import Icon from '@/components/base/IconComponent'
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   name: 'Home',
   components: {
@@ -112,6 +112,16 @@ export default {
   },
   computed: {
     ...mapState('user', ['user'])
+  },
+  methods: {
+    ...mapActions('quiz', ['createNewQuiz', 'getQuizQuestions']),
+    startNewQuiz() {
+      this.createNewQuiz().then(() => {
+        this.getQuizQuestions().then(() => {
+          this.$router.push('/quiz')
+        })
+      })
+    }
   }
 }
 </script>
