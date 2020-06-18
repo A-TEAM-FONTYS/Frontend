@@ -1,5 +1,6 @@
 import axios from 'axios'
 import Vue from 'vue'
+import router from '../router'
 
 const service = axios.create({
   baseURL: 'https://fitphone-ateam.herokuapp.com/',
@@ -19,7 +20,11 @@ service.interceptors.response.use(
     return response.data
   },
   error => {
-    if (error.response && error.response.data) {
+    if (
+      error.response &&
+      error.response.data &&
+      router.currentRoute.path !== '/stats'
+    ) {
       // handle your errors here.
       Vue.notify({
         group: 'auth',
