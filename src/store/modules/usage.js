@@ -3,7 +3,9 @@ import api from '@/services/usage.js'
 export default {
   namespaced: true,
   state: {
-    data: []
+    data: [],
+    loading: false,
+    error: null
   },
   mutations: {
     SET_USAGE_DATA: (state, data) => (state.data = data),
