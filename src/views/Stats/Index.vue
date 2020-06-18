@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      v-if="loaded"
+      v-if="loaded && !error"
       class="py-6 px-6 text-pampas font-serif w-full sm:w-2/3 sm:mx-auto"
     >
       <h1 class="text-2xl">App usage</h1>
@@ -62,26 +62,9 @@
         </div>
       </div>
     </div>
-    <!-- 
-    <div class="flex justify-center mt-8">
-      <table class="table-fixed">
-        <thead>
-          <tr>
-            <th class="px-4 py-2">App</th>
-            <th class="px-4 py-2">Time used</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="appData in allData" :key="appData.id">
-            <td class="border px-4 py-2">{{ appData.appName }}</td>
-            <td class="border px-4 py-2">{{ appData.timeUsed }} minutes</td>
-          </tr>
-        </tbody>
-      </table>
-    </div> -->
 
     <div
-      v-else-if="error"
+      v-else
       class="py-6 px-6 text-pampas font-serif flex flex-col justify-center items-center min-h-(screen-16)"
     >
       <h1 class="text-2xl">App usage</h1>
