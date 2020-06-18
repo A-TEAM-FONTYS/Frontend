@@ -6,6 +6,11 @@
         Let's start with
         <br />some questions!
       </div>
+      <div class="row-span-2">
+        <div class="flex justify-end">
+          <img src="@/assets/Boom.png" class="w-24 h-24" />
+        </div>
+      </div>
     </div>
 
     <div class="p-10">
@@ -21,6 +26,14 @@
       <div
         class="rounded-lg p-10 mt-5 mb-5 bg-limed-spruce text-pampas text-center"
       >At what age did you start using social media?</div>
+      <input
+        type="number"
+        name
+        id
+        min="0"
+        max="90"
+        class="bg-outer-space border border-green-mist rounded-lg text-center px-4 py-2 w-16"
+      />
     </div>
   </div>
 </template>
