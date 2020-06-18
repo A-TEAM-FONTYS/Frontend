@@ -32,25 +32,28 @@
                 <p class="text-xs font-serif font-light mt-5">(0 not at all, 5 very much so)</p>
             </div>
         </div>
+        <v-rating></v-rating>
         <div class="mt-10 text-center text-pampas">
             <div class="inline-block align-bottom">
                 <p class="text-s font-serif font-light mt-5">To what extend do you experience it as a problem?</p>
                 <p class="text-xs font-serif font-light mt-5">(0 not at all, 5 very much so)</p>
             </div>
         </div>
-        
+        <v-rating></v-rating>
       <v-footer></v-footer>
 </div>
 </template>
 
 <script>
+    import Rating from '@/components/Questions/ratingComponent.vue'
     import numberInput from '@/components/Questions/numperinputComponent.vue'
     import Footer from '@/components/Questions/footer.vue'
 
     export default {
     components:{
       'v-footer' : Footer,
-      'v-numberInput' : numberInput
+      'v-numberInput' : numberInput,
+      'v-rating' : Rating
     }
 }
 </script>
