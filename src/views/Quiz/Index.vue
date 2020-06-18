@@ -1,28 +1,45 @@
 <template>
   <div class="py-6 px-6 text-pampas font-serif w-full sm:w-2/3 sm:mx-auto">
-    <div class="flex justify-between">
-      <span class="text-2xl">Quenstion x</span>
-
-      <Icon
-        name="x"
-        class="text-sunglow mt-2"
-        @click.native="$router.push('/home')"
-      />
-    </div>
-    <div class="mt-16">
-      <Question />
-    </div>
+    <Question
+      v-for="(question, index) in questions"
+      :key="question.id"
+      :question="question"
+      :index="index"
+      :increase-index="increaseIndex"
+      :increment-index="incrementIndex"
+      :decrement-index="decrementIndex"
+      :array-length="arrayLength"
+    />
   </div>
 </template>
 
 <script>
-import Icon from '@/components/base/IconComponent'
 import Question from '@/components/questions/QuestionComponent'
+import { mapGetters } from 'vuex'
 
 export default {
+  data() {
+    return {
+      increaseIndex: 0
+    }
+  },
   components: {
-    Icon,
     Question
+  },
+  computed: {
+    ...mapGetters('quiz', ['questions']),
+    arrayLength() {
+      return this.questions.length
+    }
+  },
+  methods: {
+    incrementIndex() {
+      return this.increaseIndex++
+    },
+
+    decrementIndex() {
+      return this.increaseIndex--
+    }
   }
 }
 </script>
