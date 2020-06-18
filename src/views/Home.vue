@@ -51,8 +51,8 @@
               class="absolute -bottom-16 -right-16 transform rotate-45 -z-1"
             />
             <div class="inline-block align-bottom">
-              <h3 class="text-2xl mt-12">Continue your daily quiz</h3>
-              <p class="text-sm">Become aware of your app usage</p>
+              <h3 class="text-2xl mt-12">Do your daily quiz</h3>
+              <p class="text-xs">Become aware of your app usage</p>
             </div>
           </a>
         </div>
@@ -70,7 +70,7 @@
               Day Streak
             </h4>
             <div class="mt-2">
-              <div class="flex items-end">
+              <div class="flex">
                 <span class="text-4xl text-form-green leading-10">0</span>
                 <span class="text-xs ml-2 leading-10 tracking-wide">days</span>
               </div>
