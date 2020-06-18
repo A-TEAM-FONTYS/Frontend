@@ -1,3 +1,5 @@
+const { clearConfigCache } = require('prettier')
+
 module.exports = {
   purge: [],
   theme: {
@@ -6,7 +8,7 @@ module.exports = {
     },
     extend: {
       zIndex: {
-        '-1': '-1',
+        '-1': '-1'
       },
       inset: {
         '-32': '-8rem',
@@ -17,7 +19,10 @@ module.exports = {
         '-4': '-1rem'
       },
       borderRadius: {
-        'xlg': '18px'
+        xlg: '18px'
+      },
+      minHeight: {
+        '(screen-16)': 'calc(100vh - 3.5rem)'
       },
       height: {
         '14': '3.25rem'
