@@ -15,14 +15,9 @@
       >List 4 main activities on your smartphone you like to use.</div>
     </div>
     <div class="flex">
-      <textarea
-        class="text-white bg-kindagreen text-sm w-full p-1 border-solid border border-white rounded-lg"
-        type="text"
-        placeholder="Click to start typing..."
-        rows="9"
-      />
+      <CustomAnswer class="w-full" :placeholder="placeholder" :inputType="inputType" />
     </div>
-        <div class="left-0 bottom-0 w-full fixed p-6 bg-outer-space">
+    <div class="left-0 bottom-0 w-full fixed p-6 bg-outer-space">
       <div class="button-group">
         <button
           class="w-24 p-2 float-left bg-limed-spruce text-kindagold rounded-md"
@@ -46,14 +41,20 @@
 
 
 
-
-
 <script>
 import Icon from '@/components/base/IconComponent'
+import CustomAnswer from '@/components/intro-questions/CustomAnswerComponent'
 
 export default {
+  data() {
+    return {
+      inputType: 'textarea',
+      placeholder: 'Click here to start typing...'
+    }
+  },
   components: {
-    Icon
+    Icon,
+    CustomAnswer
   }
 }
 </script>
