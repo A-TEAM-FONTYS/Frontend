@@ -31,80 +31,75 @@
     </div>
     <div class="mt-5 text-pampas flex justify-center">
       <input
-        v-model.number="number"
-        type="number"
-        step="1"
-        class="bg-transparent rounded-lg font-serif border-2 border-limed-spruce h-auto w-12"
-      />
-    </div>
-    <div class="mt-10 w-full h-16 bg-limed-spruce rounded-lg text-center text-pampas">
-      <div class="inline-block align-bottom">
-        <p
-          class="text-s font-serif font-light mt-5"
-        >In your opinion, when is social media healthy for you?</p>
-      </div>
-    </div>
-    <input
-      class="mt-5 bg-transparent rounded-lg text-sm w-full h-16 font-serif text-pampas border-2 border-limed-spruce"
-      placeholder="Enter your answer here."
-      type="text"
-    />
-    <div class="mt-10 w-full h-16 bg-limed-spruce rounded-lg text-center text-pampas">
-      <div class="inline-block align-bottom">
-        <p
-          class="text-s font-serif font-light mt-5"
-        >In your opinion, when is social media unhealthy for you?</p>
-      </div>
-    </div>
-    <input
-      class="mt-5 bg-transparent rounded-lg text-sm w-full h-16 font-serif text-pampas border-2 border-limed-spruce"
-      placeholder="Enter your answer here."
-      type="text"
-    />
-    <div class="mt-10 w-full h-16 bg-limed-spruce rounded-lg text-center text-pampas">
-      <div class="inline-block align-bottom">
-        <p
-          class="text-s font-serif font-light mt-5"
-        >How much messages do you think you get on social media daily?</p>
-      </div>
-    </div>
-    <div class="mt-5 text-pampas flex justify-center">
-      <input
-        v-model.number="number"
-        type="number"
-        step="1"
-        class="bg-transparent rounded-lg font-serif border-2 border-limed-spruce h-auto w-12"
-      />
-    </div>
-    <div class="mt-10 w-full h-16 bg-limed-spruce rounded-lg text-center text-pampas">
-      <div class="inline-block align-bottom">
-        <p class="text-s font-serif font-light mt-5">How many times do you answer these messages?</p>
-      </div>
-    </div>
-    <div class="mt-5 text-pampas flex justify-center">
-      <input
-        v-model.number="number"
-        type="number"
-        step="1"
-        class="bg-transparent rounded-lg font-serif border-2 border-limed-spruce h-auto w-12"
-      />
-    </div>
-    <div class="mt-10 w-full h-16 bg-limed-spruce rounded-lg text-center text-pampas">
-      <div class="inline-block align-bottom">
-        <p
-          class="text-s font-serif font-light mt-5"
-        >How much value do you hold for comments on your social media?</p>
-      </div>
-    </div>
-    <div class="mt-5 text-pampas flex justify-center">
-      <input
-        v-model.number="number"
-        type="number"
-        step="1"
-        class="bg-transparent rounded-lg font-serif border-2 border-limed-spruce h-auto w-12"
-      />
-    </div>
-  </div>
+        class="mt-5 bg-transparent rounded-lg text-sm w-full h-16 font-serif text-pampas border-2 border-limed-spruce" placeholder="Enter your answer here."
+        type="text"
+        />
+        <div class="mt-10 w-full h-16 bg-limed-spruce rounded-lg text-center text-pampas">
+            <div class="inline-block align-bottom">
+                <p class="text-s font-serif font-light mt-5">At what age did you start using social media?</p>
+            </div>
+        </div>
+        <div class="mt-5 text-pampas flex justify-center">
+          <input 
+          v-model.number="number" type="number" step="1"
+          class="bg-transparent rounded-lg font-serif border-2 border-limed-spruce h-auto w-12">
+        </div>
+        <div class="mt-10 w-full h-16 bg-limed-spruce rounded-lg text-center text-pampas">
+            <div class="inline-block align-bottom">
+                <p class="text-s font-serif font-light mt-5">In your opinion, when is social media healthy for you?</p>
+            </div>
+        </div>
+        <input
+        class="mt-5 bg-transparent rounded-lg text-sm w-full h-16 font-serif text-pampas border-2 border-limed-spruce" placeholder="Enter your answer here."
+        type="text"
+        />
+        <div class="mt-10 w-full h-16 bg-limed-spruce rounded-lg text-center text-pampas">
+            <div class="inline-block align-bottom">
+                <p class="text-s font-serif font-light mt-5">In your opinion, when is social media unhealthy for you?</p>
+            </div>
+        </div>
+        <input
+        class="mt-5 bg-transparent rounded-lg text-sm w-full h-16 font-serif text-pampas border-2 border-limed-spruce" placeholder="Enter your answer here."
+        type="text"
+        />
+        <div class="mt-10 w-full h-16 bg-limed-spruce rounded-lg text-center text-pampas">
+            <div class="inline-block align-bottom">
+                <p class="text-s font-serif font-light mt-5">How much messages do you think you get on social media daily?</p>
+            </div>
+        </div>
+        <div class="mt-5 text-pampas flex justify-center">
+          <input 
+          v-model.number="number" type="number" step="1"
+          class="bg-transparent rounded-lg font-serif border-2 border-limed-spruce h-auto w-12">
+        </div>
+        <div class="mt-10 w-full h-16 bg-limed-spruce rounded-lg text-center text-pampas">
+            <div class="inline-block align-bottom">
+                <p class="text-s font-serif font-light mt-5">How many times do you answer these messages?</p>
+            </div>
+        </div>
+        <div class="mt-5 text-pampas flex justify-center">
+          <input 
+          v-model.number="number" type="number" step="1"
+          class="bg-transparent rounded-lg font-serif border-2 border-limed-spruce h-auto w-12">
+        </div>
+        <div class="mt-10 w-full h-16 bg-limed-spruce rounded-lg text-center text-pampas">
+            <div class="inline-block align-bottom">
+                <p class="text-s font-serif font-light mt-5">How much value do you hold for comments on your social media?</p>
+            </div>
+        </div>
+        <div class="mt-5 text-pampas flex justify-center">
+          <input 
+          v-model.number="number" type="number" step="1"
+          class="bg-transparent rounded-lg font-serif border-2 border-limed-spruce h-auto w-12">
+        </div>
+      <footer class="left-0 bottom-0 w-full fixed p-6 bg-outer-space">
+        <div class="button-group">
+          <button class="w-24 p-1 float-left bg-limed-spruce text-sunglow rounded-md">Previous</button>
+          <button class="w-24 p-1 float-right bg-sunglow text-limed-spruce rounded-md">Next</button>
+        </div>
+      </footer>
+
+</div>
 </template>
 <style scoped>
 .number-input input:focus {
