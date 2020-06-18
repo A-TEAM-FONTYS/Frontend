@@ -18,8 +18,14 @@ const routes = [
   {
     path: '/appadvantages', // TODO: '/advantages:appName'
     name: 'appadvantages',
-    component: () => import('../views/Exercises/AppAdvantages.vue')
+    component: () => import('../views/intro-questions/AppAdvantages.vue')
   },
+  {
+    path: '/openquestion',
+    name: 'openquestion',
+    component: () => import('../views/intro-questions/OpenQuestion.vue')
+
+  }
 ]
 
 const router = new VueRouter({
