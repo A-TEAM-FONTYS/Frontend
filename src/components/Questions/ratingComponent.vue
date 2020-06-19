@@ -1,7 +1,127 @@
 <template>
-<div class="flex justify-center items-center">
-  <div class="flex items-center mt-2 mb-4">
-    <svg v-for="i in 5" :key="i" class="mx-1 w-8 h-8 fill-current text-hex" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-  </div>
-</div>
+	<div ref="rating" class="stars" :class="{ readonly: readonly, notouch: notouch }" :style="mapCssProps">
+		<input :id="name + '0'" :checked="value === 0" :name="name" type="radio" value="0" />
+		<template v-for="x in max">
+			<label :key="'l' + x" :for="name + x">
+				<span class="active">
+					<slot name="activeLabel">{{ getActiveLabel(x) }}</slot>
+				</span>
+				<span class="inactive">
+					<slot name="inactiveLabel">{{ getInactiveLabel(x) }}</slot>
+				</span>
+			</label>
+			<input
+				:id="name + x"
+				:key="'i' + x"
+				:checked="value === x"
+				:name="name"
+				:disabled="readonly"
+				:value="x"
+				type="radio"
+				@change="updateInput($event.target.value)"
+			/>
+		</template>
+	</div>
 </template>
+<script>
+export default {
+	name: "VueStars",
+	props: {
+		max: { type: Number, required: false, default: 5 },
+		value: { type: Number, required: false, default: 0 },
+		name: { type: String, required: false, default: "rating" },
+		char: { type: String, required: false, default: "★" },
+		inactiveChar: { type: String, required: false, default: null },
+		readonly: { type: Boolean, required: false, default: false },
+		activeColor: { type: String, required: false, default: null },
+		inactiveColor: { type: String, required: false, default: null },
+		shadowColor: { type: String, required: false, default: null },
+		hoverColor: { type: String, required: false, default: null },
+	},
+	computed: {
+		ratingChars() {
+			return Array.from(this.char)
+		},
+		inactiveRatingChars() {
+			/* Default to ratingChars if no inactive characters have been provided */
+			return this.inactiveChar ? Array.from(this.inactiveChar) : this.ratingChars
+		},
+		notouch() {
+			/* For iPhone specifically but really any touch device, there is no true hover state, disables any pseudo-hover activity. */
+			return typeof document !== "undefined" && !("ontouchstart" in document.documentElement)
+		},
+		mapCssProps() {
+			const result = {}
+			if (this.activeColor) result["--active-color"] = this.activeColor
+			if (this.inactiveColor) result["--inactive-color"] = this.inactiveColor
+			if (this.shadowColor) result["--shadow-color"] = this.shadowColor
+			if (this.hoverColor) result["--hover-color"] = this.hoverColor
+			return result
+		},
+	},
+	methods: {
+		updateInput(v) {
+			this.$emit("input", parseInt(v, 10))
+		},
+		getActiveLabel(x) {
+			const s = this.ratingChars
+			return s[Math.min(s.length - 1, x - 1)]
+		},
+		getInactiveLabel(x) {
+			const s = this.inactiveRatingChars
+			return s[Math.min(s.length - 1, x - 1)]
+		},
+	},
+}
+</script>
+<style>
+.stars {
+	display: inline-flex;
+	flex-flow: row nowrap;
+	align-items: flex-start center;
+	line-height: 1em;
+}
+.stars label {
+	display: block;
+	padding: 0.125em;
+	width: 1.2em;
+	text-align: center;
+	color: #D6D4AF;
+	text-shadow: 0 0 0.3em #D6D4AF;
+}
+.stars input,
+.stars label .inactive,
+.stars input:checked ~ label .active,
+.stars.notouch:not(.readonly):hover label .inactive,
+.stars.notouch:not(.readonly) label:hover ~ label .active {
+	display: none;
+}
+.stars input:checked ~ label .inactive,
+.stars.notouch:not(.readonly):hover label .active,
+.stars.notouch:not(.readonly) label:hover ~ label .inactive {
+	display: inline;
+}
+.stars.notouch:not(.readonly):hover label {
+	color: #D6D4AF;
+	text-shadow: 0 0 0.3em #D6D4AF;
+}
+.stars input:checked ~ label,
+.stars.notouch:not(.readonly) label:hover ~ label {
+	color: #999;
+	text-shadow: none;
+}
+@supports (color: var(--prop)) {
+	.stars label {
+		color: var(--active-color, #D6D4AF);
+		text-shadow: 0 0 0.2em var(--shadow-color,black);
+	}
+	.stars.notouch:not(.readonly):hover label {
+		color: var(--hover-color, #D6D4AF);
+		text-shadow: 0 0 0.2em var(--shadow-color, black);
+	}
+	.stars input:checked ~ label,
+	.stars.notouch:not(.readonly) label:hover ~ label {
+		color: var(--inactive-color, #999);
+	}
+}
+</style>
