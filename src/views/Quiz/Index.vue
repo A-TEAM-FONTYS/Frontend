@@ -3,9 +3,9 @@
     <Question
       v-for="(question, index) in questions"
       :key="question.id"
+      :type="question.type"
       :question="question"
       :index="index"
-      :increase-index="increaseIndex"
       :increment-index="incrementIndex"
       :decrement-index="decrementIndex"
       :array-length="arrayLength"
@@ -15,7 +15,7 @@
 
 <script>
 import Question from '@/components/questions/QuestionComponent'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 
 export default {
   data() {
@@ -33,12 +33,13 @@ export default {
     }
   },
   methods: {
+    ...mapMutations('quiz', ['increment', 'decrement']),
     incrementIndex() {
-      return this.increaseIndex++
+      this.increment()
     },
 
     decrementIndex() {
-      return this.increaseIndex--
+      this.decrement()
     }
   }
 }
