@@ -1,7 +1,7 @@
 <template>
 <div class="bg-outer-space h-max w-max p-6 text-pampas">
     <div>
-      <h1 class="font-serif text-3xl">Question 2
+      <h1 class="font-serif text-3xl">Question 5
       </h1>
     </div>
       <div class="flex justify-center">
@@ -11,7 +11,7 @@
       </div>
       <div class="-mt-10 text-center text-pampas">
         <div class="inline-block align-bottom">
-          <h2 class="text-xl font-serif font-bold mt-10">Facebook</h2>
+          <h2 class="text-xl font-serif font-bold mt-10">Instagram</h2>
         </div>
       </div>
         <v-question question="At what age did you start using the app?"></v-question>
