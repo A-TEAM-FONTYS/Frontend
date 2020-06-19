@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import createPersistedState from 'vuex-persistedstate'
 import user from '@/store/modules/user'
 import quiz from '@/store/modules/quiz'
 import usage from '@/store/modules/usage'
@@ -14,5 +15,10 @@ export default new Vuex.Store({
     usage,
     user,
     quiz
-  }
+  },
+  plugins: [
+    createPersistedState({
+      paths: ['quiz']
+    })
+  ]
 })
