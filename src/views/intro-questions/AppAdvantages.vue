@@ -20,9 +20,24 @@
           :key="suggestion.text"
           :suggestion="suggestion.text"
           :checked="suggestion.checked"
+          @click.native="toggleCheck(suggestion)"
         />
         <li>
-          <CustomAnswer :placeholder="question.placeholder" :inputType="question.inputType" />
+          <div class="flex">
+            <input
+              v-model="customSuggestion.text"
+              @keyup.enter="addSuggestion(customSuggestion)"
+              class="text-white bg-kindagreen text-sm w-full p-1 border-solid border border-white rounded-lg"
+              type="text"
+              placeholder=" Add your own advantage..."
+            />
+          </div>
+          <!-- <CustomAnswer
+            :v-model="customSuggestion.text"
+            @keyup.enter.native="addSuggestion(customSuggestion.text)"
+            :placeholder="question.placeholder"
+            :inputType="question.inputType"
+          />-->
         </li>
       </ul>
     </div>
@@ -49,11 +64,12 @@
 <script>
 import Icon from '@/components/base/IconComponent'
 import Suggestion from '@/components/intro-questions/SuggestionComponent'
-import CustomAnswer from '@/components/intro-questions/CustomAnswerComponent'
+//import CustomAnswer from '@/components/intro-questions/CustomAnswerComponent'
 
 export default {
   data() {
     return {
+      customSuggestion: { text: '', checked: false },
       question: {
         questionNr: 15,
         placeholder: 'Add your own advantage',
@@ -71,11 +87,24 @@ export default {
       }
     }
   },
-  methods: {},
+  methods: {
+    toggleCheck(suggestion) {
+      suggestion.checked = !suggestion.checked
+    },
+    // TODO: value of suggestion.text doesnt get updated in the view
+    addSuggestion(customSuggestion) {
+      console.log(this.customSuggestion.text)
+      this.question.suggestions.push({
+        text: customSuggestion.text,
+        checked: false
+      })
+      this.customSuggestion.text = '';
+    }
+  },
   components: {
     Icon,
-    Suggestion,
-    CustomAnswer
+    Suggestion
+    //CustomAnswer
   }
 }
 </script>
