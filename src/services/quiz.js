@@ -6,5 +6,8 @@ export default {
   },
   getQuizQuestions() {
     return api.get('question/daily/category')
+  },
+  putQuizAnswers(id, questions) {
+    return api.put('quiz/' + id, { questions })
   }
 }
