@@ -51,7 +51,13 @@
               class="absolute -bottom-16 -right-16 transform rotate-45 -z-1"
             />
             <div class="inline-block align-bottom">
-              <h3 class="text-2xl mt-12">Do your daily quiz</h3>
+              <h3 class="text-2xl mt-12">
+                {{
+                  quizIndex == 0
+                    ? 'Do your daily quiz'
+                    : 'Continue your daily quiz'
+                }}
+              </h3>
               <p class="text-xs">Become aware of your app usage</p>
             </div>
           </div>
@@ -71,7 +77,9 @@
             </h4>
             <div class="mt-2">
               <div class="flex">
-                <span class="text-4xl text-form-green leading-10">0</span>
+                <span class="text-4xl text-form-green leading-10">{{
+                  dayStreak
+                }}</span>
                 <span class="text-xs ml-2 leading-10 tracking-wide">days</span>
               </div>
             </div>
@@ -104,23 +112,29 @@
 </template>
 <script>
 import Icon from '@/components/base/IconComponent'
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions, mapGetters } from 'vuex'
 export default {
   name: 'Home',
   components: {
     Icon
   },
   computed: {
-    ...mapState('user', ['user'])
+    ...mapState('user', ['user']),
+    ...mapState('quiz', ['quizIndex']),
+    ...mapGetters('quiz', ['dayStreak'])
   },
   methods: {
     ...mapActions('quiz', ['createNewQuiz', 'getQuizQuestions']),
     startNewQuiz() {
-      this.createNewQuiz().then(() => {
-        this.getQuizQuestions().then(() => {
-          this.$router.push('/quiz')
+      if (this.quizIndex == 0) {
+        this.createNewQuiz().then(() => {
+          this.getQuizQuestions().then(() => {
+            this.$router.push('/quiz')
+          })
         })
-      })
+      } else {
+        this.$router.push('/quiz')
+      }
     }
   }
 }
