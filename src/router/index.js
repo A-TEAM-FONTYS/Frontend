@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '@/views/Login.vue'
 import Register from '@/views/Register.vue'
+import store from '../store/index.js'
 
 Vue.use(VueRouter)
 
@@ -62,7 +63,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  const loggedIn = localStorage.getItem('user')
+  const loggedIn = store.getters['user/isAuthenticated']
 
   if (to.matched.some(record => record.meta.requiresAuth) && !loggedIn)
     next('/login')

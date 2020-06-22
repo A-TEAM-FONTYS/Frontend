@@ -1,6 +1,7 @@
 import axios from 'axios'
 import Vue from 'vue'
 import router from '../router'
+import store from '../store/index.js'
 
 const service = axios.create({
   baseURL: 'https://fitphone-ateam.herokuapp.com/',
@@ -8,7 +9,8 @@ const service = axios.create({
 })
 
 service.interceptors.request.use(config => {
-  const user = JSON.parse(localStorage.getItem('user'))
+  const user = store.getters['user/user']
+
   if (user && user.token) {
     config.headers.common['Authorization'] = 'Bearer ' + user.token
   }
