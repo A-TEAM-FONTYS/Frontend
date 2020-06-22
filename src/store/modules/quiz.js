@@ -92,6 +92,9 @@ export default {
     quizIndex: state => state.quizIndex,
     quizId: state => state.quiz.id,
     quizAnswers: state => state.quizAnswers,
-    dayStreak: state => state.dayStreak
+    dayStreak: state => state.dayStreak,
+    quizAnswer: state => id => {
+      return state.quizAnswers.find(x => x.id === id)
+    }
   }
 }
