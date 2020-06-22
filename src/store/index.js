@@ -18,7 +18,8 @@ export default new Vuex.Store({
   },
   plugins: [
     createPersistedState({
-      paths: ['quiz']
+      key: 'fitphone',
+      paths: ['quiz', 'user']
     })
   ]
 })
