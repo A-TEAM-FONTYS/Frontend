@@ -10,7 +10,13 @@
   >
     <notifications group="auth" class="my-style" position="top center" />
     <transition :name="transitionName" mode="out-in">
-      <router-view class="mb-16" />
+      <router-view
+        :class="
+          this.$route.path == '/login' || this.$route.path == '/register'
+            ? 'mb-0'
+            : 'mb-16'
+        "
+      />
     </transition>
     <NavBar v-if="!$route.meta.hideNavigation" />
   </div>
