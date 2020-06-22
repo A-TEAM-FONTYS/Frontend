@@ -1,10 +1,9 @@
 import api from '@/services/user.js'
-import router from '@/router/index.js'
 
 export default {
   namespaced: true,
   state: {
-    user: JSON.parse(localStorage.getItem('user')) || null,
+    user: null,
     loading: null,
     error: null
   },
@@ -17,6 +16,11 @@ export default {
     },
     SET_ERROR(state, payload) {
       state.error = payload
+    },
+    CLEAR_DATA(state) {
+      state.error = null
+      state.loading = null
+      state.user = null
     }
   },
   actions: {
@@ -28,19 +32,14 @@ export default {
           const user = res.user
           user['token'] = res.token
 
-          // put the user in localStorage
-          localStorage.setItem('user', JSON.stringify(user))
-
           commit('SET_USER_DATA', user)
           commit('SET_ERROR', null)
           commit('SET_LOADING', false)
-
-          router.push('/home')
         })
         .catch(error => {
           // If the request fails, remove user token
-          localStorage.removeItem('user')
-          commit('SET_ERROR', error.response.data)
+          commit('CLEAR_DATA')
+          commit('SET_ERROR', error)
           commit('SET_LOADING', false)
         })
     },
@@ -52,26 +51,21 @@ export default {
           const user = res.user
           user['token'] = res.token
 
-          // put the user in localStorage
-          localStorage.setItem('user', JSON.stringify(user))
-
           commit('SET_USER_DATA', user)
           commit('SET_ERROR', null)
           commit('SET_LOADING', false)
-
-          router.push('/home')
         })
         .catch(error => {
           // If the request fails, remove user token
-          localStorage.removeItem('user')
-          commit('SET_ERROR', error.response.data)
+          commit('CLEAR_DATA')
+          commit('SET_ERROR', error)
           commit('SET_LOADING', false)
           console.log(error)
         })
     },
     logout({ commit }) {
       // remove user from localStorage and force refresh
-      localStorage.removeItem('user')
+      commit('CLEAR_DATA')
       location.reload()
 
       commit('SET_ERROR', null)
@@ -83,11 +77,7 @@ export default {
   getters: {
     loading: state => state.loading,
 
-    user: state => {
-      return state.user != null
-        ? state.user
-        : JSON.parse(localStorage.getItem('user'))
-    },
+    user: state => state.user,
 
     error: state => state.error,
 
