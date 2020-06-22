@@ -175,7 +175,9 @@ export default {
         lastName: this.form.lastname
       }
 
-      this.register(user)
+      this.register(user).then(() => {
+        this.$router.push('/home')
+      })
     }
   }
 }

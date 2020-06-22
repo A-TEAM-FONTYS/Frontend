@@ -97,7 +97,9 @@ export default {
         password: this.form.password
       }
 
-      this.login(user)
+      this.login(user).then(() => {
+        this.$router.push('/home')
+      })
     }
   }
 }
