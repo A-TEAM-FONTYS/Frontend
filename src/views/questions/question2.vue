@@ -24,15 +24,19 @@
                 <p class="text-xs font-serif font-light mt-5">(0 not at all, 5 very much so)</p>
             </div>
         </div>
+        <div class="flex justify-center">
         <v-rating></v-rating>
+        </div>
         <div class="mt-10 text-center text-pampas">
             <div class="inline-block align-bottom">
                 <p class="text-s font-serif font-light mt-5">To what extend do you experience it as a problem?</p>
                 <p class="text-xs font-serif font-light mt-5">(0 not at all, 5 very much so)</p>
             </div>
         </div>
+        <div class="flex justify-center">
         <v-rating></v-rating>
-      <v-footer></v-footer>
+        </div>
+        <v-footer></v-footer>
 </div>
 </template>
 

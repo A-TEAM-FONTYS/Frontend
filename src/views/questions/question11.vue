@@ -15,7 +15,7 @@
         <v-button name="I only add people I know"></v-button>
         <v-button name="I don't care at all"></v-button>
     </div>
-    <div class="w-24 h-24 flex flex-justify-center">
+    <div class="flex justify-center">
         <v-rating></v-rating>
     </div>
     <v-footer></v-footer>
@@ -23,7 +23,6 @@
 </template>
 
 <script>
-    import Rating from '@/components/Questions/ratingComponent.vue'
     import Button from '@/components/Questions/buttonComponent.vue'
     import Header from '@/components/Questions/header.vue'
     import Footer from '@/components/Questions/footer.vue'
@@ -33,7 +32,6 @@
       'v-footer' : Footer,
       'v-header' : Header,
       'v-button' : Button,
-      'v-rating' : Rating
     }
 }
 </script>
