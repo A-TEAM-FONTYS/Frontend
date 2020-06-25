@@ -75,8 +75,7 @@ export default {
       commit('SET_LOADING', true)
       return api
         .putQuizAnswers(getters.quizId, getters.quizAnswers)
-        .then(data => {
-          console.log(data)
+        .then(() => {
           commit('RESET_STATE')
         })
         .catch(error => {
