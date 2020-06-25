@@ -95,8 +95,6 @@
             </button>
           </div>
         </div>
-        {{ quizAnswers }}
-        {{ computedAnswer }}
       </form>
     </div>
   </div>
